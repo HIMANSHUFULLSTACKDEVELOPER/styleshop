@@ -7325,3 +7325,27 @@ document.addEventListener('DOMContentLoaded', function() {
   renderReviews();
   createDots();
 });
+// product
+const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+
+        menuItems.forEach(item => {
+          if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          } else {
+            item.style.display = 'none';
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.9)';
+          }
+        });
+      });
+    });

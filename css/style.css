@@ -980,248 +980,86 @@ video {
 	height: 16px;
 	width: 16px;
 }
-
-/*------------------------------------------------------------------
-    MENU AREA
--------------------------------------------------------------------*/
+/*  */
 
 
-.menu-main{
-	
+.menu-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
 }
-
-.menu-main .title-caption{
-	color:#666;
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Cursive';
 }
-.tab-title-menu {
-	text-align:center;
+.menu-filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
-
-.tab-title-menu h2{
-	border-bottom:1px solid #666;
-	display: inline-block;
-	padding-top: 10px;
+.filter-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-
-.tab-title-menu p{
-	font-size:35px;
-	padding-top:0px;
+.filter-btn.active,
+.filter-btn:hover {
+  background: #222;
+  color: #fff;
 }
-.tab-title-menu p {
-	color:#000;
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
-
-.tab-menu{
-	background: #f5f5f5;
-    padding: 2px 0px;
-	box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.05);
+.menu-item {
+  background: #f2f2f2;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
-.offer-item {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #fff;
 }
-
-.offer-item img {
-    width: 20%;
-    float: left;
-    padding: 10px;
-    background: #fff;
-	border-radius: 50%;
+.menu-content {
+  background: #14191f;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
 }
-
-.offer-item div {
-    width: 60%;
-    float: left;
-    padding-left: 20px;
-    padding-right: 20px;
+.menu-content h3 {
+  margin: 0 0 10px;
+  font-size: 2.1rem;
+  color: white;
 }
-
-.offer-item .offer-price {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    display: block;
-    width: 92px;
-    height: 92px;
-    line-height: 92px;
-    -moz-border-radius: 92px;
-    -webkit-border-radius: 92px;
-    border-radius: 92px;
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    color: #000;
-    font-size: 26px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    letter-spacing: .5px;
+.menu-content p {
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
-
-.offer-item div h3 {
-    font-size: 20px;
-    margin: 9px 0 0px;
-    font-family: 'nautilus_pompiliusregular';
-    font-weight: 400;
-    letter-spacing: .5px;
+.price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.offer-item div p {
-    color: #6b6b6b;
+.price-cart button {
+  background: #fbbf24;
+  border: none;
+  border-radius: 50%;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
-
-
-.tab-menu .slick-prev.slick-arrow {
-	display:none;
-}
-.tab-menu .slider.slider-single{
-	border-top:1px solid #ccc;
-	padding-top:25px;
-}
-
-.tab-menu .slick-initialized .slick-slide{
-	outline:none;
-}
-
-.tab-menu .is-active h2{
-	color:#fff;
-	border-bottom: 1px solid #fff;
-}
-.tab-menu .is-active p{
-	color:#fff;
-}
-
-/*------------------------------------------------------------------
-    TEAM AREA
--------------------------------------------------------------------*/
-/* 
-.team-main{
-	background:url(../images/team_bg.jpg) no-repeat center;
-	background-attachment:fixed;
-	background-size:cover;
-	position:relative;
-}
-
-.team-main:before {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.50);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.team-main .block-title{
-	color:#fff;
-}
-
-.sf-team{
-	float: left;
-    width: 100%;
-}
-.sf-team .thumb {
-    float: left;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
-}
-.sf-team .text-col {
-    float: left;
-    width: 100%;
-    padding: 25px 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    text-align: center;
-	background:#fff;
-}
-
-.sf-team .thumb a img{
-	width:100%;
-}
-
-.sf-team:hover .text-col{
-	border: 1px solid rgba(0,0,0,0);
-	transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -webkit-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-}
-.sf-team:hover .thumb img {
-    opacity: 0.6;
-	transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -webkit-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;	
-}
-
-.text-col h3{
-	font-family: 'nautilus_pompiliusregular';
-	font-size:28px;
-}
-
-.sf-team:hover .team-social {
-    border-color: #fff;
-	transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -webkit-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-}
-
-.team-social {
-    display: block;
-    text-align: center;
-    margin: 0;
-    padding: 20px 0 0 0;
-    list-style: none;
-    border-top: 1px solid;
-}
-
-.team-social li {
-    display: inline-block;
-    padding: 0 4px;
-}
-
-.sf-team:hover .team-social li a {
-    border: 1px solid rgba(0,0,0,0);
-    background: #fff;
-    color: #222;
-	transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -webkit-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-}
-
-.team-social li a {
-    width: 34px;
-    height: 34px;
-    text-align: center;
-    line-height: 32px;
-    border: 1px solid #ccc;
-    border-radius: 100%;
-    color: #222;
-    font-size: 16px;
-    display: block;
-}
-
-.sf-team:hover .text-col h3, .sf-team:hover .text-col p {
-    color: #fff;
-	transition: all 0.5s ease-in;
-    -moz-transition: all 0.5s ease-in;
-    -webkit-transition: all 0.5s ease-in;
-    -ms-transition: all 0.5s ease-in;
-    -o-transition: all 0.5s ease-in;
-} */
-
 /*------------------------------------------------------------------
     GALLERY AREA
 -------------------------------------------------------------------*/
