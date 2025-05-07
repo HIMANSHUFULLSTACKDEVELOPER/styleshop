@@ -7348,4 +7348,59 @@ const filterButtons = document.querySelectorAll('.filter-btn');
           }
         });
       });
+    });  document.querySelectorAll('.explore-category').forEach(category => {
+      category.addEventListener('click', () => {
+          const categoryName = category.querySelector('.category-title').textContent;
+          console.log(`Category clicked: ${categoryName}`);
+          // window.location.href = `/category/${categoryName.toLowerCase()}`;
+      });
+  });
+
+  // JavaScript for product carousel functionality
+  document.querySelector('.scroll-btn').addEventListener('click', function() {
+    // In a real implementation, this would scroll to show more products
+    console.log('Scrolling to next products');
+});
+
+// Back to top button functionality
+document.querySelector('.back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
+});
+
+// Add to cart functionality
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+        console.log(`Added to cart: ${productTitle}`);
+        // Here you would add the actual cart functionality
+    });
+});
+
+// WhatsApp contact button
+document.querySelector('.whatsapp-btn').addEventListener('click', function() {
+    window.open('https://wa.me/yourphonenumber', '_blank');
+});
+     // JavaScript for interactivity
+     document.querySelectorAll('.category-item').forEach(item => {
+      item.addEventListener('click', function() {
+          const categoryName = this.querySelector('.category-name').textContent;
+          console.log(`Category clicked: ${categoryName}`);
+          // Here you would add navigation to category pages
+          // window.location.href = `/category/${categoryName.toLowerCase().replace(/\s+/g, '-')}`;
+      });
+  });
+
+    // JavaScript for enhanced interactions
+    document.querySelectorAll('.collection-cta').forEach(button => {
+      button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const category = this.closest('.product-collection-item').querySelector('.collection-heading').textContent;
+          console.log(`Shopping for: ${category}`);
+          // Here you would add navigation to category shopping pages
+          // window.location.href = `/shop/${category.toLowerCase()}`;
+      });
+  });
