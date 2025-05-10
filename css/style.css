@@ -2902,3 +2902,107 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
       max-width: 100%;
   }
 }
+/*  */
+.banner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.banner-box {
+  background-color: #eee;
+  padding: 15px;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.banner-box:hover {
+  background-color: #ddd;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.card-info h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price {
+  font-weight: bold;
+  color: #e53935;
+}
+
+.original {
+  text-decoration: line-through;
+  font-weight: normal;
+  color: #777;
+  margin-left: 5px;
+}
+
+.discount {
+  color: green;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.emi {
+  font-size: 12px;
+  color: #555;
+}
+
+.emi a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+/* Layout: 2 cards per row on tablets */
+.product-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.banner {
+flex-direction: column;
+}
+
+.banner-box {
+margin-bottom: 10px;
+}
+
+.card-info h3 {
+font-size: 14px;
+}
+}
