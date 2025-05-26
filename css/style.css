@@ -3035,3 +3035,84 @@ font-size: 14px;
         font-size: 20px;
       }
     }
+
+
+
+
+
+
+
+
+        .top-banner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f8f8f8;
+      padding: 20px 10px;
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .top-banner .bank-offers,
+    .top-banner .delivery-info,
+    .top-banner .store-info {
+      max-width: 300px;
+    }
+
+    .top-banner img {
+      height: 20px;
+      margin: 0 5px;
+      vertical-align: middle;
+    }
+
+    .budget-section {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .budget-section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .budget-section p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .price-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 40px;
+    }
+
+    .price-box {
+      border: 3px solid #f4a300;
+      padding: 30px 40px;
+      width: 200px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .price-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .price-box h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .price-box span {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff5a00;
+    }
