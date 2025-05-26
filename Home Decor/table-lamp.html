@@ -1,0 +1,918 @@
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyrus Sheesham Wood Wall Mount Multipurpose Rack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff6e26;
+            --secondary-color: #2f4858;
+            --light-gray: #f5f5f5;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            padding: 10px 0;
+            font-size: 12px;
+        }
+        
+        .breadcrumb a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-right: 5px;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        
+        /* Product Section */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            gap: 20px;
+        }
+        
+        .product-images {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .main-image {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            margin-top: 10px;
+            overflow-x: auto;
+            gap: 10px;
+        }
+        
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--primary-color);
+        }
+        
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--text-color);
+            border: none;
+            z-index: 10;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        /* Product Details */
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .ratings {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+        
+        .reviews-count {
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .discount {
+            background-color: #e6f4ea;
+            color: #0f9d58;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .current-price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .offers {
+            background-color: #fff8e6;
+            border: 1px dashed #ffc107;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        .offers p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .sale-tag {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .coupon-code {
+            background-color: #fff0e6;
+            border: 1px dashed var(--primary-color);
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+        
+        .availability {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .check-icon {
+            color: #0f9d58;
+            margin-right: 5px;
+        }
+        
+        .variant-selection {
+            margin-bottom: 20px;
+        }
+        
+        .variant-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .variant-options {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .variant-option {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 5px;
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .variant-option img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .variant-option.selected {
+            border-color: var(--primary-color);
+        }
+        
+        .variant-name {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .quantity-label {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            border: none;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .delivery-section {
+            margin-bottom: 20px;
+        }
+        
+        .delivery-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .pincode-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .pincode-input {
+            flex: 1;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px 0 0 4px;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        
+        .check-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0 15px;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+        }
+        
+        .delivery-info {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .add-to-cart, .buy-now {
+            flex: 1;
+            height: 45px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .add-to-cart {
+            background-color: #ff9f00;
+            color: white;
+        }
+        
+        .buy-now {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .button-icon {
+            margin-right: 5px;
+        }
+        
+        /* Product Information Tabs */
+        .product-tabs {
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+        
+        .tab-header {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .tab-content {
+            padding: 15px 0;
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .specs-table td {
+            padding: 10px 0;
+        }
+        
+        .specs-table td:first-child {
+            width: 40%;
+            font-weight: bold;
+        }
+        
+        /* Help Section */
+        .help-section {
+            background-color: #fff8e6;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .help-text {
+            font-weight: bold;
+        }
+        
+        .help-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .request-call, .live-chat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .request-call {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        
+        .live-chat {
+            background-color: white;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 1s infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            
+            .main-image {
+                height: 300px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .help-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .help-buttons {
+                margin-top: 10px;
+                width: 100%;
+            }
+            
+            .request-call, .live-chat {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .variant-options {
+                flex-wrap: wrap;
+            }
+            
+            .product-title {
+                font-size: 20px;
+            }
+            
+            .current-price {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>   
+                <!-- <a href="#">Furniture</a> <span>></span>
+                <a href="#">Living Room Furniture</a> <span>></span> -->
+               >
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="product-container">
+            <!-- Product Images -->
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="mainImage" src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/1-810x702.jpg" alt="Cyrus Sheesham Wood Wall Mount Multipurpose Rack">
+                    <button class="arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" data-index="0">
+                        <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/1-810x702.jpg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" data-index="1">
+                        <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/2-810x702.jpg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail" data-index="2">
+                        <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/Black-info-810x702.jpg" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail" data-index="3">
+                        <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/2-810x702.jpg" alt="Thumbnail 4">
+                    </div>
+                    <div class="thumbnail" data-index="4">
+                        <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/Black-info-810x702.jpg" alt="Thumbnail 5">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Details -->
+            <div class="product-details">
+                <h1 class="product-title">Wick Metal Black Table Lamp
+
+</h1>
+                <div class="ratings">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="reviews-count">(247) Add to Wishlist</span>
+                </div>
+                
+                <div class="price-container">
+                    <span class="discount">33% OFF</span>
+                    <span class="current-price">₹2,749</span>
+                    <span class="original-price">₹4,099</span>
+                </div>
+                
+                <div class="offers">
+                    <p><strong>UNLOCK FLAT 10% OFF WITH COUPON CODE: <span class="coupon-code">SUMMER10</span></strong></p>
+                    <p>GRAB THE BEST DEAL NOW! <strong>FREE SHIPPING AVAILABLE</strong> <span class="sale-tag">NO EMI AVAILABLE</span></p>
+                </div>
+                
+                <div class="availability">
+                    <i class="fas fa-check-circle check-icon"></i>
+                    <span>In Stock | Fastest Delivery by Tomorrow</span>
+                </div>
+                
+                <div class="variant-selection">
+                    <p class="variant-title">Finish / Options:</p>
+                    <div class="variant-options">
+                        <div class="variant-option selected">
+                            <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/Black-info-810x702.jpg" alt="Brown Finish">
+                            <span class="variant-name">Brown Finish</span>
+                        </div>
+                        <div class="variant-option">
+                            <img src="https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/Black-info-810x702.jpg" alt="Black Finish">
+                            <span class="variant-name">Black Finish</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quantity-section">
+                    <span class="quantity-label">Quantity:</span>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="decreaseBtn">-</button>
+                        <input type="text" class="quantity-input" id="quantityInput" value="1" readonly>
+                        <button class="quantity-btn" id="increaseBtn">+</button>
+                    </div>
+                    <span style="margin-left: 10px; font-size: 12px; color: #666;">( 92,998 left of all items )</span>
+                </div>
+                
+                <div class="delivery-section">
+                    <p class="delivery-title">Delivery</p>
+                    <div class="pincode-container">
+                        <input type="text" class="pincode-input" placeholder="Enter Pincode">
+                        <button class="check-btn">CHECK</button>
+                    </div>
+                    <p class="delivery-info">Enter Your Pincode to Check Delivery Availability. Generally Arrives in 3-5 Business Days.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart button-icon"></i>
+                        ADD TO CART
+                    </button>
+                    <button class="buy-now">
+                        <i class="fas fa-bolt button-icon"></i>
+                        BUY NOW
+                    </button>
+                </div>
+                
+                <div class="product-tabs">
+                    <div class="tab">
+                        <div class="tab-header" data-tab="overview">
+                            Product Overview
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="tab-content" id="overview">
+                            <table class="specs-table">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>Sheesham Wood</td>
+                                </tr>
+                                <tr>
+                                    <td>Color</td>
+                                    <td>Honey Finish</td>
+                                </tr>
+                                <tr>
+                                    <td>Brand</td>
+                                    <td>Wooden Street</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Includes</td>
+                                    <td>Wall Mount Multipurpose Wooden Shelves</td>
+                                </tr>
+                                <tr>
+                                    <td>Mounting Type</td>
+                                    <td>Wall Mount</td>
+                                </tr>
+                                <tr>
+                                    <td>Style</td>
+                                    <td>Modern</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensions (Inches)</td>
+                                    <td>31.1 x 9.8 x 19.7</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensions (Metric)</td>
+                                    <td>79.0 x 25.0 x 50.0 cm</td>
+                                </tr>
+                                <tr>
+                                    <td>Assembly Instructions</td>
+                                    <td>DIY Assembly Required</td>
+                                </tr>
+                                <tr>
+                                    <td>SKU</td>
+                                    <td>WSMRK-04567</td>
+                                </tr>
+                                <tr>
+                                    <td>Seller's Condition</td>
+                                    <td>Luxury Assembly</td>
+                                </tr>
+                                <tr>
+                                    <td>Warranty</td>
+                                    <td>1 Year (12 Months)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="tab">
+                        <div class="tab-header" data-tab="description">
+                            Description
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="tab-content" id="description">
+                            <p>The Cyrus Sheesham Wood Wall Mount Multipurpose Rack is a stylish and functional addition to your home. Made from premium Sheesham wood with a beautiful honey finish, this wall-mounted rack features multiple compartments for storing and displaying your favorite items.</p>
+                            <p>This versatile rack can be used in the living room, bedroom, study, or kitchen to organize books, decorative items, photo frames, or everyday essentials. Its sturdy construction ensures durability, while the elegant design adds a touch of sophistication to your interior decor.</p>
+                            <p>The rack comes with all necessary hardware for easy installation and can be assembled with basic DIY skills. Add this beautiful wooden rack to your home for both practical storage and aesthetic appeal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab">
+                        <div class="tab-header" data-tab="merchant">
+                            Merchant Details
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="tab-content" id="merchant">
+                            <p><strong>Seller:</strong> Wooden Street Official</p>
+                            <p><strong>Seller Rating:</strong> 4.7/5 (Based on 15,000+ reviews)</p>
+                            <p><strong>Shipping From:</strong> Jodhpur, Rajasthan</p>
+                            <p><strong>Return Policy:</strong> 30-day easy returns for damaged or defective products</p>
+                            <p><strong>Warranty:</strong> 1 Year manufacturer warranty against manufacturing defects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Help Section -->
+        <div class="help-section">
+            <div class="help-text">Need Help in Buying?</div>
+            <div class="help-buttons">
+                <button class="request-call">
+                    <i class="fas fa-phone"></i>
+                    REQUEST A CALL BACK
+                </button>
+                <button class="live-chat">
+                    <i class="fas fa-comments"></i>
+                    Talk to Experts
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Image Gallery Functionality
+        const mainImage = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentIndex = 0;
+        const totalImages = thumbnails.length;
+        
+        // Placeholder images for demonstration
+        const imageSources = [
+            'https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/1-810x702.jpg',
+            'https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/2-810x702.jpg',
+            'https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/Black-info-810x702.jpg',
+            'https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/2-810x702.jpg',
+             'https://images.woodenstreet.de/image/cache/data/home-decors/lamps-lighting/table-lamp/wick-metal-black-table-lamp/updated/Black-info-810x702.jpg'
+        ];
+        
+        function updateMainImage(index) {
+            mainImage.src = imageSources[index];
+            mainImage.classList.remove('fade-in');
+            void mainImage.offsetWidth; // Trigger reflow for animation restart
+            mainImage.classList.add('fade-in');
+            
+            // Update thumbnails
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            thumbnails[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+        
+        // Set up thumbnail click handlers
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                updateMainImage(index);
+            });
+        });
+        
+        // Previous and Next button functionality
+        prevBtn.addEventListener('click', () => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = totalImages - 1;
+            updateMainImage(newIndex);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= totalImages) newIndex = 0;
+            updateMainImage(newIndex);
+        });
+        
+        // Quantity selector functionality
+        const decreaseBtn = document.getElementById('decreaseBtn');
+        const increaseBtn = document.getElementById('increaseBtn');
+        const quantityInput = document.getElementById('quantityInput');
+        
+        decreaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+        
+        increaseBtn.addEventListener('click', () => {
+            let currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+        
+        // Variant selection functionality
+        const variantOptions = document.querySelectorAll('.variant-option');
+        
+        variantOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                variantOptions.forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                option.classList.add('selected');
+            });
+        });
+        
+        // Tabs functionality
+        const tabHeaders = document.querySelectorAll('.tab-header');
+        
+        tabHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const tabId = header.getAttribute('data-tab');
+                const tabContent = document.getElementById(tabId);
+                
+                if (tabContent.classList.contains('active')) {
+                    tabContent.classList.remove('active');
+                    header.querySelector('i').classList.remove('fa-chevron-up');
+                    header.querySelector('i').classList.add('fa-chevron-down');
+                } else {
+                    // Close other tabs
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.querySelectorAll('.tab-header i').forEach(icon => {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    });
+                    
+                    // Open selected tab
+                    tabContent.classList.add('active');
+                    header.querySelector('i').classList.remove('fa-chevron-down');
+                    header.querySelector('i').classList.add('fa-chevron-up');
+                }
+            });
+        });
+        
+        // Add to Cart animation
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        addToCartBtn.addEventListener('click', function() {
+            this.classList.add('pulse');
+            setTimeout(() => {
+                this.classList.remove('pulse');
+                alert('Product added to cart!');
+            }, 1000);
+        });
+        
+        // Buy Now button
+        const buyNowBtn = document.querySelector('.buy-now');
+        buyNowBtn.addEventListener('click', function() {
+            alert('Proceeding to checkout!');
+        });
+        
+        // Pincode check
+        const checkBtn = document.querySelector('.check-btn');
+        checkBtn.addEventListener('click', function() {
+            const pincodeInput = document.querySelector('.pincode-input');
+            const pincode = pincodeInput.value.trim();
+            
+            if (pincode.length === 6 && !isNaN(pincode)) {
+                alert('Delivery available at ' + pincode + '. Estimated delivery in 3-5 business days.');
+            } else {
+                alert('Please enter a valid 6-digit pincode');
+            }
+        });
+        
+        // Request call back
+        const requestCallBtn = document.querySelector('.request-call');
+        requestCallBtn.addEventListener('click', function() {
+            alert('Our customer service will call you shortly!');
+        });
+        
+        // Live chat
+        const liveChatBtn = document.querySelector('.live-chat');
+        liveChatBtn.addEventListener('click', function() {
+            alert('Connecting you to our expert. Please wait...');
+        });
+    </script>
+</body>
+</html>

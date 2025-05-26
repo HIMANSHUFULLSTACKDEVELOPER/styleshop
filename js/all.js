@@ -7404,3 +7404,26 @@ document.querySelector('.whatsapp-btn').addEventListener('click', function() {
           // window.location.href = `/shop/${category.toLowerCase()}`;
       });
   });
+
+
+
+
+
+
+
+
+  // blog
+  // Optional JS if you want to auto-scroll the carousel
+    const carousel = document.querySelector('.carousel');
+    let scrollAmount = 0;
+
+    setInterval(() => {
+      scrollAmount += 310;
+      if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }, 3000);
