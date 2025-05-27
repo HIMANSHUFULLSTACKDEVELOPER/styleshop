@@ -37,3 +37,10 @@ document.querySelector('.whatsapp-button').addEventListener('click', function() 
 document.querySelector('.filter-button').addEventListener('click', function() {
     alert('Filter panel would open here');
 });
+
+
+
+  function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
