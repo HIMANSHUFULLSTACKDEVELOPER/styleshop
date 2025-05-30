@@ -340,7 +340,7 @@ html, body{ height: 100%; }
 -------------------------------------------------------------------*/
 
 .banner{
-	background:url(../Home\ Decor\ Presentation.jpg) no-repeat center top;
+	background:url(../images/Home\ Decor\ Presentation.jpg) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
